@@ -17,8 +17,19 @@ class ProductController extends Controller
         return view('product/form');
     }
 
-    //
+
+    //Controlador para guardar datos en la base datos
     function save(request $request){
+
+        // Validaciones para los campos del formulario
+    $request->validate([
+        "name"=>'required|max:50',
+        "cost"=>'required|numeric',
+        "price"=>'required|numeric',
+        "quantity"=>'required|numeric',
+        "brand"=>'required|max:50',
+        ]);
+
         $product = new Product();
         $product ->name = $request ->name;
         $product ->cost = $request ->cost;
@@ -27,6 +38,15 @@ class ProductController extends Controller
         $product ->brand = $request ->brand;
 
         $product ->save();
+
+        return redirect('/products');
+    }
+
+    //Controlador para borrar por id los datos
+    function delete($id){
+        // select * from products where id=$id
+        $product = Product::findOrFail($id);
+        $product -> delete();
 
         return redirect('/products');
     }

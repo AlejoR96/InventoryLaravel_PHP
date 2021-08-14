@@ -33,8 +33,11 @@ Route::get('/usuario/{nombre_usuario?}',
 Route::get('/products', [ProductController::class, 'show']);
 
 /*Ruta para llamar o mostrar el formulario */
-Route::get('product/form',[ProductController::class, 'form'])->name('product.form');
+Route::get('/product/form',[ProductController::class, 'form'])->name('product.form');
 
 /*Ruta para guardar los datos en la base de datos*/
 
-Route::post('product/save', [ProductController::class, 'save']) -> name('product.save');
+Route::post('/product/save', [ProductController::class, 'save']) -> name('product.save');
+
+/*Ruta para borrar datos por id */
+route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
