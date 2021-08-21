@@ -8,6 +8,11 @@ use App\Models\Product;
 class ProductController extends Controller
 //controlador para mostrar los datos de base de datos en una vista
 {
+    function __construct(){ //Funcion para auntenticar sesion y navegar por vistas
+        $this -> middleware('auth');
+    }
+
+    //-----------------------------//
     function show(){
         $list = Product::all(); //select * from products
         return view('product/list',['products' => $list]);
