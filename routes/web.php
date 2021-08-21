@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');
 
 
 //Route::get('/usuario', function () {
@@ -35,9 +35,16 @@ Route::get('/products', [ProductController::class, 'show']);
 /*Ruta para llamar o mostrar el formulario */
 Route::get('/product/form',[ProductController::class, 'form'])->name('product.form');
 
+/*Ruta para el boton insetar y editar */
+Route::get('/product/form/{id?}',[ProductController::class, 'form'])->name('product.form');
+
 /*Ruta para guardar los datos en la base de datos*/
 
 Route::post('/product/save', [ProductController::class, 'save']) -> name('product.save');
 
 /*Ruta para borrar datos por id */
 route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

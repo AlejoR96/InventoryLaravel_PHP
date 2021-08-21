@@ -7,6 +7,21 @@
         </div>
 
 </div>
+
+@if(Session::has('message'))
+    <p class="alert alert-success">
+        {{ Session::get('message') }}
+
+    </p>
+@endif
+
+@if(Session::has('messageDelete'))
+    <p class="alert alert-danger">
+        {{ Session::get('messageDelete') }}
+
+    </p>
+    @endif
+
 <table class="table table-striped table-hover">
     <!--Encabezado de la tabla -->
     <thead>
@@ -31,7 +46,7 @@
             <td>{{$product ->quantity}}</td>
             <td>{{$product ->brand}}</td>
             <td>
-                <a href="#" class="btn btn-warning">Editar</a>
+                <a href="{{route('product.form', ['id' => $product ->id])}}" class="btn btn-warning">Editar</a>
                 <a href="{{route('product.delete', ['id' => $product->id])}}" class="btn btn-danger">Borrar</a>
             </td>
         </tr>
