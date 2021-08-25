@@ -1,5 +1,7 @@
 <?php
 /*Ruta para llamar o traer el controlador  */
+
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\personaController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -48,3 +50,6 @@ route::get('/product/delete/{id}', [ProductController::class, 'delete'])->name('
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*Ruta para llamar o motrar las marcas (Brand)*/
+Route::get('/brand/{show_brand?}',[BrandController::class, 'showBrand'])-> where('show_brand', '[a-zA-Z]+');
