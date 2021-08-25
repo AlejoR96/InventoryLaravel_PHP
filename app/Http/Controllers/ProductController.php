@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 
 class ProductController extends Controller
+
+                           /*APLICAR LOGICA DE NEGOCIO*/
 //controlador para mostrar los datos de base de datos en una vista
 {
     function __construct(){ //Funcion para auntenticar sesion y navegar por vistas
