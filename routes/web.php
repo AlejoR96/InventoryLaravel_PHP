@@ -54,7 +54,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 /*RUTAS EXCLUSIVAS PARA BRAND*/
 
-/*Ruta para llamar o motrar las marcas (Brand) - PRUEBAS*/
+/* - PRUEBAS*/
 // Route::get('/brand/{show_brand?}',[BrandController::class, 'showBrand'])-> where('show_brand', '[a-zA-Z]+');
 
+/**Ruta para llamar o motrar las marcas (tb Brand)*/
 Route::get('/brands', [BrandController::class, 'showBrand']);
+
+/*Ruta para llamar o mostrar el formulario */
+Route::get('/brands/form', [BrandController::class, 'form'])->name('brand.form');
+
+/*Ruta para guardar y actualizar datos en (tb brand)*/
+Route::post('/brand/save', [BrandController::class, 'save'])->name('brand.save');
+
+/*Ruta para borrar datos por el boton de borrar*/
+Route::get('/brand/delete{id}', [BrandController::class,'delete'])->name('brand.delete');
