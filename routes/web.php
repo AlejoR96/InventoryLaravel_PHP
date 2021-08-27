@@ -51,5 +51,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/*Ruta para llamar o motrar las marcas (Brand)*/
-Route::get('/brand/{show_brand?}',[BrandController::class, 'showBrand'])-> where('show_brand', '[a-zA-Z]+');
+
+/*RUTAS EXCLUSIVAS PARA BRAND*/
+
+/*Ruta para llamar o motrar las marcas (Brand) - PRUEBAS*/
+// Route::get('/brand/{show_brand?}',[BrandController::class, 'showBrand'])-> where('show_brand', '[a-zA-Z]+');
+
+Route::get('/brands', [BrandController::class, 'showBrand']);
