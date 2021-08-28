@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-sm-10"></div>
         <div class="col-sm-2">
-            <a href="{{ route('product.form') }}" class="btn btn-primary">Nuevo producto</a>
+            <a href="{{ route('product.form') }}" class="btn btn-primary btn-icons">Nuevo producto</a>
         </div>
 
 </div>
@@ -45,9 +45,9 @@
             <td>{{$product ->price}}</td>
             <td>{{$product ->quantity}}</td>
             <td>{{$product ->brand}}</td>
-            <td>
-                <a href="{{route('product.form', ['id' => $product ->id])}}" class="btn btn-warning">Editar</a>
-                <a href="{{route('product.delete', ['id' => $product->id])}}" class="btn btn-danger">Borrar</a>
+            <td class="col-sm-2">
+                <a href="{{route('product.form', ['id' => $product ->id])}}" class="btn btn-warning bi bi-file-earmark-text btn-icons"></a>
+                <a href="{{route('product.delete', ['id' => $product->id])}}" class="btn btn-danger bi bi-trash btn-icons"></a>
             </td>
         </tr>
         @endforeach

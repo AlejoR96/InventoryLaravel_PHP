@@ -10,7 +10,8 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
 
-
+    <!-- Libreria de iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -26,6 +27,11 @@
 
 
     <style>
+
+        .btn-icons{
+          font-size: 20px;
+        }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -83,6 +89,13 @@
             <a class="nav-link" href="/products">
               <span data-feather="shopping-cart"></span>
               Products
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/brands">
+              <span data-feather="shopping-cart"></span>
+              brands
             </a>
           </li>
         </ul>
