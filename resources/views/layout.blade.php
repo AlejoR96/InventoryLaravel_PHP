@@ -27,6 +27,11 @@
 
 
     <style>
+
+        .btn-icons{
+          font-size: 20px;
+        }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -84,6 +89,13 @@
             <a class="nav-link" href="/products">
               <span data-feather="shopping-cart"></span>
               Products
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/brands">
+              <span data-feather="shopping-cart"></span>
+              brands
             </a>
           </li>
         </ul>

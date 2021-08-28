@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-sm-10"></div>
         <div class="col-sm-2">
-            <a href="{{ route('brand.form') }}" class="btn btn-primary"><span class="bi bi-file-earmark-plus">Nueva marca</span></a>
+            <a href="{{ route('brand.form') }}" class="btn btn-primary bi bi-file-earmark-plus btn-icons">Nueva marca</a>
         </div>
 
 </div>
@@ -37,8 +37,8 @@
             <td>{{$brand->city}}</td>
             <td>{{$brand->country}}</td>
             <td class="col-sm-2">
-                <a href="#" class="btn btn-warning"><span class="bi bi-file-earmark-text">Editar</span></a>
-                <a href="{{ route('brand.delete', ['id' => $brand->id]) }}" class="btn btn-danger"><span class="bi bi-trash">Borrar</span></a>
+                <a href="{{ route('brand.form', ['id' => $brand->id]) }}" class="btn btn-warning bi bi-file-earmark-text btn-icons"></a>
+                <a href="{{ route('brand.delete', ['id' => $brand->id]) }}" class="btn btn-danger bi bi-trash btn-icons"></a>
             </td>
         </tr>
         @endforeach

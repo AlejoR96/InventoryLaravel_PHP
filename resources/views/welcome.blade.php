@@ -2,6 +2,6 @@
 
 @section('title', 'Inicio')
 @section('header', 'Inicio')
-@section('content')
+@section('content',)
 
 @endsection

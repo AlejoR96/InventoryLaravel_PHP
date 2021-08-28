@@ -21,23 +21,37 @@ class BrandController extends Controller
         return view('brand/list', ['brands' =>$listBrand]);
     }
 
-    // Metodo mostrar el formulario
-     function form ()
-    {
-        return view('brand/form');
+    // Metodo mostrar el formulario para agregar y editar marcar
+     function form ($id = null)
+    {    $brand = new Brand();
+        if ($id !=null) {
+            $brand = Brand::findOrFail($id);
+        }
+        return view('brand/form',['brand' => $brand]);
     }
 
-    // Metodo guardar los datos enviados por el formulario
+
+    // Metodo guardar los datos enviados y editados por el formulario
      function save (Request $request)
     {
+
+        $request ->validate([
+            "name" => 'required|max:50',
+            "city" => 'required|max:50',
+            "country" =>'required|max:50',
+
+        ]);
         $brand = new Brand();
+        if ($request -> id !=null) {
+            $brand = Brand::findOrFail($request -> id);
+        }
         $brand -> name = $request -> name;
         $brand -> city = $request -> city;
         $brand -> country = $request -> country;
 
         $brand -> save();
 
-        return redirect('/brands');
+        return redirect('/brands')->with('message', 'Los datos han sido actualizados');#variables de sesion
 
     }
 
