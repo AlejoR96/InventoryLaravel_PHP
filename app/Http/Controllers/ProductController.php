@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Brand;
 
 class ProductController extends Controller
 
@@ -23,10 +24,13 @@ class ProductController extends Controller
 // Controlador para mostrar el formulario con los datos boton insertar y editar
     function form($id =null){
         $product = new Product();
+        $brands = Brand::all();
         if ($id !=null) {
             $product = Product::findOrFail($id);
         }
-        return view('product/form',['product' => $product]);
+        return view('product/form',[//Relacione los datos y traerlo en el formulario para editar
+                    'product' => $product,
+                    'brands' => $brands]);
     }
 
 
@@ -50,7 +54,7 @@ class ProductController extends Controller
         $product ->cost = $request ->cost;
         $product ->price = $request ->price;
         $product ->quantity = $request ->quantity;
-        $product ->brand = $request ->brand;
+        $product ->brand_id = $request ->brand;
 
         $product ->save();
 

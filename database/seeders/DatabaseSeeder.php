@@ -18,13 +18,15 @@ class DatabaseSeeder extends Seeder
         //Corre o ejecutar el seeder ProductSeeder para crear datos
 
         $this->call([
-            ProductSeeder::class
+            BrandSeeder::class,
+            ProductSeeder::class,
+            UserSeeder::class
         ]);
 
         //Corre o ejecutar el seeder BrandSeeder para crear datos
-        $this->call([
-            BrandSeeder::class
-        ]);
+        // $this->call([
+
+        // ]);
 
 
     }

@@ -1,4 +1,5 @@
 @extends('layout')
+@section('header', 'Brands - Laravel')
 @section('content')
 
 <div class="row">
