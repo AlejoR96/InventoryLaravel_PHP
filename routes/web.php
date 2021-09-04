@@ -4,6 +4,7 @@
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\personaController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,3 +70,10 @@ Route::post('/brand/save', [BrandController::class, 'save'])->name('brand.save')
 /*Ruta para borrar datos por el boton de borrar*/
 Route::get('/brand/delete{id}', [BrandController::class,'delete'])->name('brand.delete');
 
+// Rutas para categories
+/**Ruta para llamar o motrar las marcas (tb Brand)*/
+Route::get('/categories', [CategoriesController::class, 'show']);
+
+Route::get('category/form/{id?}', [CategoriesController::class, 'form'])->name('category.form');
+Route::post('category/save', [CategoriesController::class, 'save'])->name('category.save');
+Route::get('category/delete/{id}', [CategoriesController::class, 'delete'])->name('category.delete');

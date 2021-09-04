@@ -98,6 +98,13 @@
               Brands
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/categories">
+              <span data-feather="shopping-cart"></span>
+              categories
+            </a>
+          </li>
         </ul>
       </div>
     </nav>

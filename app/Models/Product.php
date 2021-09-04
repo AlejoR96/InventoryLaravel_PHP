@@ -14,4 +14,9 @@ class Product extends Model
     function brand(){
         return $this->belongsTo(Brand::class);
     }
+
+    ///Aqui se hace la relacion de product a brand
+    function categories(){
+        return $this->belongsTo(Categories::class);
+    }
 }
