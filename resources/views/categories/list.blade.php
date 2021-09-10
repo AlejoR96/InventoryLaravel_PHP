@@ -32,8 +32,8 @@
             <td>{{$category->name}}</td>
             <td>{{$category->description}}</td>
             <td class="text-end" style="white-space: nowrap;">
-                <a href="{{ route('category.form',  ['id' => $category->id]) }}" class="btn btn-warning">Edit</a>
-                <a href="{{ route('category.delete', ['id'=>$category->id]) }}" class="btn btn-danger">Delete</a>
+                <a href="{{ route('category.form',  ['id' => $category->id]) }}" class="btn btn-warning bi bi-file-earmark-text btn-icons"></a>
+                <a href="{{ route('category.delete', ['id'=>$category->id]) }}" class="btn btn-danger"></a>
             </td>
         </tr>
         @endforeach
