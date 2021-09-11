@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-sm-10"></div>
         <div class="col-sm-2">
-            <a href="#" class="btn btn-primary bi bi-file-earmark-plus btn-icons">Nueva marca</a>
+            <a href="{{ route('category.form') }}" class="btn btn-primary  btn-icons">Nueva Categoria</a>
         </div>
 
 </div>
@@ -36,8 +36,8 @@
             <td>{{$category->name}}</td>
             <td>{{$category->description}}</td>
             <td class="col-sm-2">
-                <a href="#" class="btn btn-warning bi bi-file-earmark-text btn-icons"></a>
-                <a href="#" class="btn btn-danger bi bi-trash btn-icons"></a>
+                <a href="{{ route('category.form', ['id'=>$category->id]) }}" class="btn btn-warning bi bi-file-earmark-text btn-icons"></a>
+                <a href="{{ route('category.delete', ['id'=>$category->id]) }}" class="btn btn-danger bi bi-trash btn-icons"></a>
             </td>
         </tr>
         @endforeach

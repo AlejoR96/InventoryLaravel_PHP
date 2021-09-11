@@ -29,10 +29,11 @@ class CategoryController extends Controller
 
         $request ->validate([
             "name" => 'required|max:50',
-            "description" => 'required|max:150',
+            "description" => 'required|max:200',
 
 
         ]);
+        
         $category = new Category();
         if ($request -> id !=null) {
             $category = Category::findOrFail($request -> id);

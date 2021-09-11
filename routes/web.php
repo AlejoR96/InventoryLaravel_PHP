@@ -73,6 +73,12 @@ Route::get('/brand/delete{id}', [BrandController::class,'delete'])->name('brand.
 // Rutas para categories
 Route::get('/categories', [CategoryController::class, 'show']);
 
+Route::get('/categories/form{id?}', [CategoryController::class, 'form'])->name('category.form');
+
+Route::post('/cateogry/save', [CategoryController::class, 'save'])->name('category.save');
+
+Route::get('/category/delete{id}', [CategoryController::class,'delete'])->name('category.delete');
+
 
 
 

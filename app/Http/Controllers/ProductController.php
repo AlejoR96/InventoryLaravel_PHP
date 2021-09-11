@@ -30,7 +30,8 @@ class ProductController extends Controller
         }
         return view('product/form',[//Relacione los datos y traerlo en el formulario para editar
                     'product' => $product,
-                    'brands' => $brands]);
+                    'brands' => $brands,
+                    'categories'=> $categories]);
     }
 
 
@@ -44,6 +45,7 @@ class ProductController extends Controller
         "price"=>'required|numeric',
         "quantity"=>'required|numeric',
         "brand"=>'required|max:50',
+        "category"=> 'required'
         ]);
                      //Campos del formulario
         $product = new Product();
@@ -55,6 +57,7 @@ class ProductController extends Controller
         $product ->price = $request ->price;
         $product ->quantity = $request ->quantity;
         $product ->brand_id = $request ->brand;
+        $product ->category_id = $request ->category;
 
         $product ->save();
 
