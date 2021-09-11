@@ -24,8 +24,8 @@ class CategoryFactory extends Factory
     {
         return [
 
-            'name' => Str::random(5),
-            'description' => Str::random(150)
+            'name' => $this->faker-> name(),
+            'description' => $this-> faker->text()
 
         ];
     }
