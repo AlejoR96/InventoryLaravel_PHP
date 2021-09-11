@@ -47,6 +47,7 @@
             <td>{{$product ->quantity}}</td>
             <td>{{$product ->brand -> name}}</td>
             <td>{{$product ->category -> name}}</td>
+
             <td class="col-sm-2">
                 <a href="{{route('product.form', ['id' => $product ->id])}}" class="btn btn-warning bi bi-file-earmark-text btn-icons"></a>
                 <a href="{{route('product.delete', ['id' => $product->id])}}" class="btn btn-danger bi bi-trash btn-icons"></a>
