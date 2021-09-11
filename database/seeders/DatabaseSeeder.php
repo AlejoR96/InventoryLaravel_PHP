@@ -18,9 +18,11 @@ class DatabaseSeeder extends Seeder
         //Corre o ejecutar el seeder ProductSeeder para crear datos
 
         $this->call([
+            CategorySeeder::class,
             BrandSeeder::class,
             ProductSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+
         ]);
 
         //Corre o ejecutar el seeder BrandSeeder para crear datos
