@@ -15,12 +15,14 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        //Corre o ejecutar el seeder ProductSeeder para crear datos
+        //Corre o ejecutar los seeders  para crear datos
 
         $this->call([
             BrandSeeder::class,
             ProductSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            InvoiceSeeder::class,
+            InvoiceDetailSeeder::class
         ]);
 
         //Corre o ejecutar el seeder BrandSeeder para crear datos
